@@ -7,34 +7,21 @@ import java.net.URL;
 import java.net.HttpURLConnection;
 import java.io.BufferedReader;
 
-
+/**
+ * Klassen WeatherAPI hämtar data från ett API
+ */
 public class WeatherAPI {
-
-    private final String apiKey = "f6afdf0f361d0dc9ff397c821a4ce2d3";
-    private final String requestUrl = "http://api.openweathermap.org/geo/1.0/direct?q=London&limit=5&appid={f6afdf0f361d0dc9ff397c821a4ce2d3}";
+    private final String apiKey = "de0a38df17ceeb9e636b3d6cbfac6337";
+    private final String requestUrl = "http://api.openweathermap.org/geo/1.0/direct?q=London&limit=5&appid={de0a38df17ceeb9e636b3d6cbfac6337}";
 
     public WeatherAPI() {
     }
 
-    public Weather getWeatherData() throws IOException {
-        String apiData = getData();
-        JSONObject jsonObject = new JSONObject(apiData);
-
-        // Anpassa datan efter behov
-        JSONArray weatherArray = jsonObject.getJSONArray("weather");
-        JSONObject weatherObject = weatherArray.getJSONObject(0);
-        String main = weatherObject.getString("main");
-        String description = weatherObject.getString("description");
-
-        JSONObject mainObject = jsonObject.getJSONObject("main");
-        double temp = mainObject.getDouble("temp");
-
-        // Skapa ett Weather-objekt med den anpassade datan
-        Weather weather = new Weather(main, description, temp);
-        return weather;
-    }
-
-
+    /**
+     * Hämtar data från API:et
+     * @return Returnerar data från API:et som en sträng
+     * @throws IOException Använder ett IO-exception för att hantera fel
+     */
     public String getData() throws IOException {
         URL url = new URL(requestUrl);
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();

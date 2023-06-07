@@ -1,6 +1,5 @@
 package org.campusmolndal;
 
-
 /*
  * ----------------------------------------------------------------------------
  * Copyright (c) 2019-2023 Marcus Medina, Campus Mölndal
@@ -15,4 +14,5 @@ public class Main {
 
     }
 }
+
 

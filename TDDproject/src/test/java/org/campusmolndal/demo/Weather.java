@@ -3,34 +3,38 @@ import org.json.JSONObject;
 
 public class Weather {
 
-    String main;
-    String description;
-    double temp;
+    String weather;
+    double wind;
+    double temperature;
 
-    public Weather(String main, String description, double temp) {
-        this.main = main;
-        this.description = description;
-        this.temp = temp;
+    public Weather(String weather, double wind, double temperature) {
+        this.weather = weather;
+        this.wind = wind;
+        this.temperature = temperature;
     }
 
-    public String getMain() {
-        return main;
+    public String getWeather() {
+        return weather;
     }
 
-    public String getDescription() {
-        return description;
+    public double getWind() {
+        return wind;
     }
 
-    public double getTemp() {
-        return temp;
+    public double getTemperature() {
+        return temperature;
     }
 
-    //Skapa ett json objekt med datan
-    public JSONObject getJson() {
+    public String toString() {
+        return "Weather: " + weather + ", Wind: " + wind + ", Temperature: " + temperature;
+    }
+
+    // Skapa ett JSON-objekt av Weather-objektet
+    public JSONObject toJSON() {
         JSONObject json = new JSONObject();
-        json.put("main", main);
-        json.put("description", description);
-        json.put("temp", temp);
+        json.put("weather", weather);
+        json.put("wind", wind);
+        json.put("temperature", temperature);
         return json;
     }
 
