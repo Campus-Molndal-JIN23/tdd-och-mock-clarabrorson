@@ -8,13 +8,30 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 public class WeatherServiceTest {
+
+    private WeatherAPI weatherAPI;
+    private WeatherService weatherService;
+
     @BeforeEach
-    public void setUp() throws IOException {
-        WeatherAPI weatherAPI = mock(WeatherAPI.class);
-        when(weatherAPI.getData()).thenReturn("The weather is sunny");
-        WeatherService weatherService = new WeatherService(weatherAPI);
+    public void setUp() {
+        weatherAPI = mock(WeatherAPI.class);
+        weatherService = new WeatherService(weatherAPI);
     }
 
+    @Test
+    public void testGetData() throws IOException {
+        // Arrange
+        String json = "{\"weather\":\"Sunny\",\"wind\":5.3,\"temperature\":25.5}";
+        when(weatherAPI.getData()).thenReturn(json);
+        // Act
+        Weather weatherData = weatherService.getWeatherData();
+
+        //Assert
+        assertEquals("Sunny", weatherData.getWeather());
+        assertEquals(5.3, weatherData.getWind());
+        assertEquals(25.5, weatherData.getTemperature());
+
+    }
     // Testar att WeatherService-klassen kan hämta data från API:et
     @Test
     public void testGetWeatherData() throws IOException {
@@ -35,9 +52,6 @@ public class WeatherServiceTest {
         assertEquals("Sunny", weatherData.getWeather());
         assertEquals(5.3, weatherData.getWind());
         assertEquals(25.5, weatherData.getTemperature());
-
-
-
     }
-
+    
 }

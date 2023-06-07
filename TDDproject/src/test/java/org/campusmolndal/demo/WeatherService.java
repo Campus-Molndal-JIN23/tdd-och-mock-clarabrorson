@@ -37,18 +37,6 @@ public class WeatherService {
             }
 
             return null;
-
-            /*String apiData = weatherAPI.getData(); // Hämta data från API:et
-            JSONObject jsonObject = new JSONObject(apiData);// Skapa ett json-objekt av datan
-            JSONArray jsonArray = jsonObject.getJSONArray("weather"); // Hämta en array från json-objektet
-            JSONObject weatherObject = jsonArray.getJSONObject(0); // Hämta ett json-objekt från arrayen
-            String weather = weatherObject.getString("main"); // Hämta en sträng från json-objektet
-            JSONObject windObject = jsonObject.getJSONObject("wind"); // Hämta ett json-objekt från json-objektet
-            double wind = windObject.getDouble("speed"); // Hämta ett double-värde från json-objektet
-            JSONObject mainObject = jsonObject.getJSONObject("main"); // Hämta ett json-objekt från json-objektet
-            double temperature = mainObject.getDouble("temp"); // Hämta ett double-värde från json-objektet
-
-            return new Weather(weather, wind, temperature); // Skapa ett Weather-objekt*/
         }
 
         //Test för att kolla om API:et fungerar

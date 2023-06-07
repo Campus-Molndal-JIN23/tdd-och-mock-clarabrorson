@@ -25,6 +25,8 @@ public class Weather {
         return temperature;
     }
 
+
+
     public String toString() {
         return "Weather: " + weather + ", Wind: " + wind + ", Temperature: " + temperature;
     }
