@@ -1,5 +1,6 @@
 package org.campusmolndal.demo;
 import org.json.JSONObject;
+
 public class Weather {
 
     String main;
@@ -32,5 +33,7 @@ public class Weather {
         json.put("temp", temp);
         return json;
     }
+
+
 
 }

@@ -1,7 +1,6 @@
 package org.campusmolndal.demo;
 import org.json.JSONArray;
 import org.json.JSONObject;
-
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
