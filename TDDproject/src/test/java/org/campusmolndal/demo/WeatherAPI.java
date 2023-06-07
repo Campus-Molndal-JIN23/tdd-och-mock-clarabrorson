@@ -1,4 +1,7 @@
 package org.campusmolndal.demo;
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
@@ -13,6 +16,25 @@ public class WeatherAPI {
 
     public WeatherAPI() {
     }
+
+    public Weather getWeatherData() throws IOException {
+        String apiData = getData();
+        JSONObject jsonObject = new JSONObject(apiData);
+
+        // Anpassa datan efter behov
+        JSONArray weatherArray = jsonObject.getJSONArray("weather");
+        JSONObject weatherObject = weatherArray.getJSONObject(0);
+        String main = weatherObject.getString("main");
+        String description = weatherObject.getString("description");
+
+        JSONObject mainObject = jsonObject.getJSONObject("main");
+        double temp = mainObject.getDouble("temp");
+
+        // Skapa ett Weather-objekt med den anpassade datan
+        Weather weather = new Weather(main, description, temp);
+        return weather;
+    }
+
 
     public String getData() throws IOException {
         URL url = new URL(requestUrl);
