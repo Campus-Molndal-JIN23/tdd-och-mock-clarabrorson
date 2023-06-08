@@ -1,6 +1,8 @@
 package org.campusmolndal.demo;
 import org.json.JSONObject;
-
+    /**
+     * @Auther Clara Brorson
+     */
 public class Weather {
 
     String weather;
@@ -25,13 +27,14 @@ public class Weather {
         return temperature;
     }
 
-
-
     public String toString() {
+
         return "Weather: " + weather + ", Wind: " + wind + ", Temperature: " + temperature;
     }
 
-    // Skapa ett JSON-objekt av Weather-objektet
+    /**
+     * Metod för att skapa ett JSON-objekt av ett Weather-objekt
+     */
     public JSONObject toJSON() {
         JSONObject json = new JSONObject();
         json.put("weather", weather);
@@ -39,7 +42,4 @@ public class Weather {
         json.put("temperature", temperature);
         return json;
     }
-
-
-
 }

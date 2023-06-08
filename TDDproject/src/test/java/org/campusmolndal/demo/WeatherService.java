@@ -1,11 +1,13 @@
 package org.campusmolndal.demo;
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import java.io.IOException;
 
-    /**
-     * Klassen WeatherService hämtar data från ett API och anpassar datan till ett Weather-objekt
+/**
+ * @Auther Clara Brorson
+ */
+/**
+ * Klassen WeatherService hämtar data från ett API och anpassar datan till ett Weather-objekt
      */
 public class WeatherService {
 
@@ -17,8 +19,6 @@ public class WeatherService {
 
         /**
          * Hämtar data från API:et och anpassar datan till ett Weather-objekt
-         * @return
-         * @throws IOException
          */
         public Weather getWeatherData() throws IOException {
             try {
@@ -38,20 +38,4 @@ public class WeatherService {
 
             return null;
         }
-
-        //Test för att kolla om API:et fungerar
-        public static void main(String[] args) {
-            WeatherAPI weatherAPI = new WeatherAPI();
-            WeatherService weatherService = new WeatherService(weatherAPI);
-
-            try {
-                Weather weatherData = weatherService.getWeatherData();
-                System.out.println("Weather: " + weatherData.getWeather());
-                System.out.println("Temp: " + weatherData.getTemperature());
-                System.out.println("Wind: " + weatherData.getWind());
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-
 }

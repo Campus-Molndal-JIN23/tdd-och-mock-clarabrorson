@@ -1,22 +1,18 @@
 package org.campusmolndal.demo;
-import org.json.JSONArray;
-import org.json.JSONObject;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.HttpURLConnection;
 import java.io.BufferedReader;
-
-/**
- * Klassen WeatherAPI hämtar data från ett API
- */
+    /**
+     * @Auther Clara Brorson
+    */
+    /**
+    * Klassen WeatherAPI hämtar data från ett API
+    */
 public class WeatherAPI {
-    private final String apiKey = "de0a38df17ceeb9e636b3d6cbfac6337";
-    private final String requestUrl = "http://api.openweathermap.org/geo/1.0/direct?q=London&limit=5&appid={de0a38df17ceeb9e636b3d6cbfac6337}";
-
-    public WeatherAPI() {
-    }
-
+    private final String apiKey = "4c86c5169b47e303de836399b857d6a9";
+    private final String requestUrl = "http://api.openweathermap.org/geo/1.0/direct?q=London&limit=5&appid={4c86c5169b47e303de836399b857d6a9}";
     /**
      * Hämtar data från API:et
      * @return Returnerar data från API:et som en sträng
