@@ -1,7 +1,7 @@
 package org.campusmolndal.demo;
 import org.json.JSONObject;
     /**
-     * @Auther Clara Brorson
+     * @Author Clara Brorson
      */
 public class Weather {
 

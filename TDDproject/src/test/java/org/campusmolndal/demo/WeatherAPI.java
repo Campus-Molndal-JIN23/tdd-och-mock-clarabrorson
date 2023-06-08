@@ -5,7 +5,7 @@ import java.net.URL;
 import java.net.HttpURLConnection;
 import java.io.BufferedReader;
     /**
-     * @Auther Clara Brorson
+     * @Author Clara Brorson
     */
     /**
     * Klassen WeatherAPI hämtar data från ett API

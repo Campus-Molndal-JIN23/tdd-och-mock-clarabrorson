@@ -4,7 +4,7 @@ import org.json.JSONObject;
 import java.io.IOException;
 
 /**
- * @Auther Clara Brorson
+ * @Author Clara Brorson
  */
 /**
  * Klassen WeatherService hämtar data från ett API och anpassar datan till ett Weather-objekt
